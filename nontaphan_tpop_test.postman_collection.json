@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "7362ce4e-fe09-4f10-90e1-09599ca47d27",
+		"name": "nontaphan_tpop_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5789821"
+	},
+	"item": [
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "my-reservation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGFzZGFzZDFAYXNkYXNkLmNvbSIsInN1YiI6MiwiaWF0IjoxNzAzMDYwOTcwLCJleHAiOjE3MDMwNjEwMzB9.h5H_QD6Cfk0KQGyJEkD_N4tXiGIYgC-UDHpT3xf4PP8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/reservation/my-reservation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reservation",
+								"my-reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": 1,\r\n    \"seat_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/reservation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "event-listing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/event",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "seat_management",
+			"item": [
+				{
+					"name": "add-seat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"zone\":\"C\",\r\n    \"event_id\": 1,\r\n    \"row\": 1,\r\n    \"seat_number\": 2,\r\n    \"is_available\": 2    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/seat-management",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"seat-management"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit-seat",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"zone\":\"B\",\r\n    \"row\":\"2\",\r\n    \"seat_number\":\"2\",\r\n    \"is_available\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/seat-management/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"seat-management",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-seat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/seat-management/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"seat-management",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view-all-seat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/seat-management",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"seat-management"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view-seat-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/seat-management/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"seat-management",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test66@test.com\",\r\n    \"password\": \"GH1123ai#cvA\",\r\n    \"confirmPassword\":\"GH1123ai#cvA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/registration",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/authentication/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"authentication",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
